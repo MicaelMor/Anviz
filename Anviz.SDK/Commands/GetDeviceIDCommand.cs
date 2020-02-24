@@ -21,7 +21,7 @@ namespace Anviz.SDK
         public async Task<ulong> GetDeviceID()
         {
             var response = await DeviceStream.SendCommand(new GetDeviceIDCommand(DeviceId));
-            DeviceId = Bytes.Read(response.DATA);
+            DeviceId = response.DeviceID;
             return DeviceId;
         }
     }
